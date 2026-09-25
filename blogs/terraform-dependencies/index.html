@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Understand Terraform's dependency graph, implicit references and the cases where depends_on is useful.">
+<title>Implicit vs explicit dependencies in Terraform | ManishDevOps</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../post.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="../../">manish<span>devops</span><b>.in</b></a><a class="back" href="../">← ALL BLOGS</a></div></header>
+<main><header class="container article-header"><div class="kicker">TERRAFORM</div><h1>Implicit vs explicit dependencies in Terraform</h1><p>Understand Terraform's dependency graph, implicit references and the cases where depends_on is useful.</p><div class="meta">MANISH KUMAR SINGH · DEVOPS NOTES</div></header>
+<article class="container article">
+<h2>Implicit dependency</h2>
+<p>Terraform automatically creates a dependency when one resource references an attribute from another resource. The reference itself tells Terraform which object must exist first.</p>
+<pre>resource "azurerm_resource_group" "rg" {
+  name     = "devops-rg"
+  location = "East US"
+}
+
+resource "azurerm_storage_account" "app" {
+  name                     = "devopsapp123"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+}</pre>
+<p>Because the storage account references the resource group's attributes, Terraform knows the relationship without an explicit dependency.</p>
+<h2>Explicit dependency with depends_on</h2>
+<p>Use <code>depends_on</code> when the dependency exists operationally but is not visible through a resource attribute reference.</p>
+<pre>resource "azurerm_role_assignment" "example" {
+  # ...
+  depends_on = [
+    azurerm_role_definition.example
+  ]
+}</pre>
+<p>The important point is that <code>depends_on</code> should not be used everywhere. Overusing it can make the graph more restrictive than necessary.</p>
+<h2>How Terraform uses the graph</h2>
+<p>Terraform builds a graph of resources and relationships, then walks that graph while respecting dependencies. Independent resources can be processed in parallel, while dependent resources wait for their prerequisites.</p>
+<div class="callout"><strong>Interview tip:</strong> Say: <em>“Implicit dependencies come from references in expressions. Explicit dependencies are declared with depends_on when Terraform cannot infer the real operational dependency.”</em></div>
+<div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
+<footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
+</body></html>

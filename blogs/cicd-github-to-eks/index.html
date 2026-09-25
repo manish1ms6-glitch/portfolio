@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A simple production-oriented pipeline from source code to a running Kubernetes workload.">
+<title>GitHub to EKS: a practical CI/CD flow | ManishDevOps</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../post.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="../../">manish<span>devops</span><b>.in</b></a><a class="back" href="../">← ALL BLOGS</a></div></header>
+<main><header class="container article-header"><div class="kicker">CI/CD / AWS</div><h1>GitHub to EKS: a practical CI/CD flow</h1><p>A simple production-oriented pipeline from source code to a running Kubernetes workload.</p><div class="meta">MANISH KUMAR SINGH · DEVOPS NOTES</div></header>
+<article class="container article">
+<h2>The flow</h2>
+<ol><li>Developer pushes code to GitHub.</li><li>Pipeline runs linting and automated tests.</li><li>Docker image is built.</li><li>Image is scanned and tagged with an immutable version such as the Git commit SHA.</li><li>Image is pushed to Amazon ECR.</li><li>Pipeline authenticates to AWS and deploys the new image to EKS.</li><li>Deployment health is verified.</li><li>If verification fails, roll back to the previous known-good version.</li></ol>
+<h2>Why use an immutable image tag?</h2>
+<p>Using a commit SHA or release identifier makes it possible to know exactly which build is running. Avoid relying only on a mutable tag such as <code>latest</code> for production deployments.</p>
+<h2>Typical Kubernetes deployment</h2>
+<pre>kubectl -n app set image deployment/app \
+  app=ACCOUNT.dkr.ecr.REGION.amazonaws.com/app:COMMIT_SHA
+
+kubectl -n app rollout status deployment/app</pre>
+<h2>Where failures should be visible</h2>
+<p>Each pipeline stage should produce useful logs. A failed test should stop the build. A failed image push should prevent deployment. A failed rollout should trigger a controlled response rather than silently leaving a broken release in production.</p>
+<div class="callout"><strong>Production principle:</strong> Build once, promote the same immutable artifact, verify the deployment and keep the previous version available for rollback.</div>
+<div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
+<footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
+</body></html>

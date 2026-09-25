@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A structured incident-debugging workflow for a sudden CPU spike after deployment.">
+<title>CPU suddenly hits 95% after a release | ManishDevOps</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../post.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="../../">manish<span>devops</span><b>.in</b></a><a class="back" href="../">← ALL BLOGS</a></div></header>
+<main><header class="container article-header"><div class="kicker">PRODUCTION</div><h1>CPU suddenly hits 95% after a release</h1><p>A structured incident-debugging workflow for a sudden CPU spike after deployment.</p><div class="meta">MANISH KUMAR SINGH · DEVOPS NOTES</div></header>
+<article class="container article">
+<h2>Step 1: Confirm the scope</h2>
+<p>Determine whether the spike affects one Pod, one node, one service or the whole environment. Compare the timing of the spike with the deployment timestamp.</p>
+<pre>kubectl top pods -A
+kubectl top nodes
+kubectl get pods -A -o wide</pre>
+<h2>Step 2: Compare before and after</h2>
+<p>Check the release diff: application code, configuration, environment variables, replica count, resource requests/limits and dependency changes. A new loop, expensive query or high request rate can all appear as CPU pressure.</p>
+<h2>Step 3: Check Kubernetes behavior</h2>
+<ul><li>Look for CrashLoopBackOff or frequent restarts.</li><li>Check HPA behavior and replica counts.</li><li>Compare CPU requests and limits with actual consumption.</li><li>Check whether traffic increased at the same time.</li></ul>
+<h2>Step 4: Decide whether to mitigate or roll back</h2>
+<p>If the release is strongly correlated and the service is degraded, follow the incident process. A rollback may be appropriate when it is the safest way to restore service while the root cause is investigated.</p>
+<h2>Step 5: Investigate the root cause</h2>
+<p>Use application logs, metrics, traces where available and profiling tools appropriate to the runtime. The goal is to identify what code path or workload behavior is consuming CPU, not simply to increase the node size.</p>
+<div class="callout"><strong>Interview answer:</strong> “First I establish scope and correlate the spike with the release. Then I inspect Pod/node metrics, restarts, HPA, traffic and resource settings. If the release is causing impact, I use the approved rollback or mitigation path, then investigate logs and application behavior to find the root cause.”</div>
+<div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
+<footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
+</body></html>

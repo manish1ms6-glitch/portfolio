@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Smaller images improve pull time, startup speed and the operational footprint of your workloads.">
+<title>Reducing Docker image size for Kubernetes | ManishDevOps</title>
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../post.css"></head>
+<body>
+<header class="site-header"><div class="container nav"><a class="brand" href="../../">manish<span>devops</span><b>.in</b></a><a class="back" href="../">← ALL BLOGS</a></div></header>
+<main><header class="container article-header"><div class="kicker">DOCKER</div><h1>Reducing Docker image size for Kubernetes</h1><p>Smaller images improve pull time, startup speed and the operational footprint of your workloads.</p><div class="meta">MANISH KUMAR SINGH · DEVOPS NOTES</div></header>
+<article class="container article">
+<h2>1. Use a multi-stage build</h2>
+<p>Keep compilers and build dependencies in a builder stage, then copy only the runtime artifacts into the final image.</p>
+<pre>FROM node:22 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+CMD ["node","dist/server.js"]</pre>
+<h2>2. Use a suitable base image</h2>
+<p>A smaller runtime base can reduce image size, but compatibility and security still matter. Test the application thoroughly instead of choosing a base image only because it is small.</p>
+<h2>3. Use .dockerignore</h2>
+<p>Exclude Git history, local dependencies, build output and other files that do not belong in the image build context.</p>
+<pre>node_modules
+.git
+coverage
+*.log
+.env</pre>
+<h2>4. Combine this with Kubernetes practices</h2>
+<p>Smaller images pull faster when a new node starts, which can improve scaling and rollout time. Keep image tags immutable and regularly scan the final runtime image.</p>
+<div class="callout"><strong>Interview tip:</strong> Mention multi-stage builds, .dockerignore, minimal runtime dependencies, layer caching and immutable image tags.</div>
+<div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
+<footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
+</body></html>

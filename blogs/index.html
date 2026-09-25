@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manish Kumar Singh's DevOps blog — practical notes on Kubernetes, Terraform, Azure, AWS, CI/CD and production troubleshooting.">
+  <title>Blogs | ManishDevOps</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="../">manish<span>devops</span><b>.in</b></a>
+    <nav class="nav-links" style="display:flex"><a href="../">Home</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></nav>
+  </div>
+</header>
+<main>
+<section class="blog-hero"><div class="container">
+  <p class="kicker">MANISHDEVOPS.IN / BLOGS</p>
+  <h1>Practical DevOps<br><em>notes & guides.</em></h1>
+  <p>Short, interview-friendly and production-focused articles about cloud, Kubernetes, Terraform, CI/CD and troubleshooting.</p>
+  <div class="blog-filter">
+    <input id="search" type="search" placeholder="Search Kubernetes, Terraform, AWS..." aria-label="Search blogs">
+  </div>
+</div></section>
+<section class="blog-index"><div class="container">
+  <div class="all-posts">
+    <a class="post-card" data-search="kubernetes pod scheduling scheduler requests limits taints tolerations affinity" href="kubernetes-pod-scheduling/"><span>01 · KUBERNETES</span><h2>How Kubernetes schedules a Pod</h2><p>Understand the scheduler flow, resource requests, taints, tolerations and affinity with a practical mental model.</p><b>Read article →</b></a>
+    <a class="post-card" data-search="terraform dependency implicit explicit depends_on graph" href="terraform-dependencies/"><span>02 · TERRAFORM</span><h2>Implicit vs explicit dependencies in Terraform</h2><p>Learn how Terraform discovers relationships between resources and when depends_on is actually needed.</p><b>Read article →</b></a>
+    <a class="post-card" data-search="aks upgrade azure kubernetes node pool control plane pods" href="aks-upgrade/"><span>03 · AZURE</span><h2>AKS upgrade: control plane vs node pool</h2><p>What changes during an AKS upgrade and how to plan a safer production rollout.</p><b>Read article →</b></a>
+    <a class="post-card" data-search="cicd github eks kubernetes docker ecr aws deployment pipeline" href="cicd-github-to-eks/"><span>04 · CI/CD · AWS</span><h2>GitHub to EKS: a practical CI/CD flow</h2><p>Source code, build, image scanning, registry, deployment and rollback — step by step.</p><b>Read article →</b></a>
+    <a class="post-card" data-search="docker image size optimization layers cache multi stage build kubernetes" href="docker-image-optimization/"><span>05 · DOCKER</span><h2>Reducing Docker image size for Kubernetes</h2><p>Practical techniques to make images smaller, faster to pull and easier to secure.</p><b>Read article →</b></a>
+    <a class="post-card" data-search="production cpu spike 95 release debugging kubernetes linux monitoring" href="production-cpu-spike/"><span>06 · PRODUCTION</span><h2>CPU suddenly hits 95% after a release</h2><p>A structured incident-debugging approach that starts with evidence and avoids guesswork.</p><b>Read article →</b></a>
+  </div>
+  <p id="no-results" class="no-results" hidden>No matching article found.</p>
+</div></section>
+</main>
+<footer><div class="container footer-wrap"><span>© <span id="year"></span> Manish Kumar Singh</span><a href="../">Back to portfolio ↗</a></div></footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const input=document.getElementById("search"), cards=[...document.querySelectorAll(".post-card")], empty=document.getElementById("no-results");
+input.addEventListener("input",()=>{const q=input.value.toLowerCase().trim();let n=0;cards.forEach(c=>{const show=!q||c.dataset.search.includes(q);c.style.display=show?"flex":"none";if(show)n++});empty.hidden=n!==0});
+</script>
+</body>
+</html>
