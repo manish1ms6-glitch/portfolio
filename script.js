@@ -1,23 +1,24 @@
 const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav-links");
 
 menuButton?.addEventListener("click", () => {
-  const open = nav.style.display === "flex";
-  nav.style.display = open ? "none" : "flex";
-  nav.style.flexDirection = "column";
-  nav.style.position = "absolute";
-  nav.style.right = "24px";
-  nav.style.top = "68px";
-  nav.style.padding = "18px";
-  nav.style.background = "#0d1b2d";
-  nav.style.border = "1px solid rgba(255,255,255,.1)";
-  nav.style.borderRadius = "12px";
+  const open = nav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
 });
 
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth <= 800) nav.style.display = "none";
-  });
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => nav?.classList.remove("open"));
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));

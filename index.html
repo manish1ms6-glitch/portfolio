@@ -3,217 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manish Kumar Singh - Senior DevOps Engineer portfolio. Azure, AWS, Kubernetes, Terraform, CI/CD and cloud automation.">
-  <meta name="keywords" content="DevOps Engineer, Azure, AWS, Kubernetes, AKS, EKS, Terraform, CI/CD, Docker, Jenkins, Azure DevOps, Prometheus, Grafana">
+  <meta name="description" content="Manish Kumar Singh — DevOps Engineer specializing in Azure, AWS, Kubernetes, Terraform, CI/CD, automation and observability.">
+  <meta name="keywords" content="DevOps Engineer, Azure, AWS, Kubernetes, AKS, EKS, Terraform, Docker, CI/CD, Azure DevOps, Jenkins, Prometheus, Grafana">
   <meta name="author" content="Manish Kumar Singh">
-  <title>Manish Kumar Singh | Senior DevOps Engineer</title>
+  <meta property="og:title" content="Manish Kumar Singh | DevOps Engineer">
+  <meta property="og:description" content="Cloud, Kubernetes, automation, CI/CD and observability portfolio.">
+  <meta property="og:type" content="website">
+  <title>Manish Kumar Singh | DevOps Engineer</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="#home">Manish<span>DevOps</span></a>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    <nav>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home">manish<span>devops</span><b>.in</b></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="blogs/">Blogs</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">SENIOR DEVOPS ENGINEER</p>
-        <h1>Hi, I'm <span>Manish Kumar Singh</span></h1>
-        <h2>Cloud • Kubernetes • Automation • CI/CD</h2>
-        <p class="hero-text">
-          DevOps Engineer with 7+ years of experience building, automating and
-          supporting scalable cloud and container platforms across Azure and AWS.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn secondary" href="#contact">Let's Connect</a>
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <p class="kicker">DEVOPS ENGINEER · CLOUD · AUTOMATION</p>
+      <h1>Build it.<br><em>Automate it.</em><br>Run it reliably.</h1>
+      <p class="hero-lead">I’m Manish Kumar Singh, a DevOps Engineer focused on cloud infrastructure, Kubernetes, CI/CD, Infrastructure as Code and production reliability across Azure and AWS.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Explore my work <span>↗</span></a>
+        <a class="btn btn-ghost" href="blogs/">Read my blogs</a>
+      </div>
+      <div class="quick-links">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="assets/resume.pdf">Resume ↓</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="photo-frame">
+        <img src="assets/manish.jpg" alt="Manish Kumar Singh">
+        <div class="photo-label">
+          <span class="status-dot"></span>
+          <span>Open to DevOps opportunities</span>
         </div>
       </div>
-      <div class="terminal-card">
-        <div class="terminal-top"><span></span><span></span><span></span></div>
-        <pre><code>$ kubectl get nodes
-NAME            STATUS   ROLE
-aks-nodepool1   Ready    worker
+      <div class="floating-card card-one"><strong>7+</strong><span>Years experience</span></div>
+      <div class="floating-card card-two"><strong>Azure · AWS</strong><span>Cloud platforms</span></div>
+    </div>
+  </div>
+</section>
 
-$ terraform plan
-Plan: infrastructure ready
+<section class="marquee" aria-label="Technology stack">
+  <div class="marquee-track">
+    <span>AZURE</span><i>✦</i><span>AWS</span><i>✦</i><span>KUBERNETES</span><i>✦</i><span>TERRAFORM</span><i>✦</i><span>DOCKER</span><i>✦</i><span>CI/CD</span><i>✦</i><span>PROMETHEUS</span><i>✦</i><span>GRAFANA</span><i>✦</i>
+    <span>AZURE</span><i>✦</i><span>AWS</span><i>✦</i><span>KUBERNETES</span><i>✦</i><span>TERRAFORM</span><i>✦</i><span>DOCKER</span><i>✦</i><span>CI/CD</span><i>✦</i>
+  </div>
+</section>
 
-$ echo "Ship it!"
-Ship it! 🚀</code></pre>
+<section id="about" class="section">
+  <div class="container two-col">
+    <div class="section-intro reveal">
+      <p class="kicker">01 / ABOUT</p>
+      <h2>Infrastructure should be boring.<br><span>Delivery should be fast.</span></h2>
+    </div>
+    <div class="section-body reveal">
+      <p class="large">I work on the systems behind applications: cloud infrastructure, containers, deployment pipelines, monitoring and automation.</p>
+      <p>My day-to-day focus is turning manual and fragile processes into repeatable, observable workflows. I enjoy troubleshooting production issues, improving deployment reliability and building platforms that teams can operate with confidence.</p>
+      <div class="stats-grid">
+        <div><strong>7+</strong><span>Years in DevOps</span></div>
+        <div><strong>2</strong><span>Major clouds</span></div>
+        <div><strong>24×7</strong><span>Production mindset</span></div>
+        <div><strong>IaC</strong><span>Automation first</span></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="about" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">ABOUT ME</p>
-        <h2>Building reliable infrastructure & delivery pipelines</h2>
-      </div>
-      <div class="about-grid">
-        <div>
-          <p>
-            I'm a Senior DevOps Engineer focused on cloud infrastructure,
-            Kubernetes, Infrastructure as Code, CI/CD automation and production
-            operations.
-          </p>
-          <p>
-            My experience includes Microsoft Azure and AWS, Kubernetes (AKS/EKS),
-            Terraform, Docker, Helm, Azure DevOps, Jenkins, Git, Python, Bash,
-            Prometheus, Grafana and Grafana Loki.
-          </p>
-          <p>
-            I enjoy automating repetitive work, improving deployment workflows,
-            troubleshooting production environments and creating observable,
-            scalable platforms.
-          </p>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>7+</strong><span>Years Experience</span></div>
-          <div class="stat"><strong>Azure</strong><span>Cloud Platform</span></div>
-          <div class="stat"><strong>AWS</strong><span>Cloud Platform</span></div>
-          <div class="stat"><strong>AKS/EKS</strong><span>Kubernetes</span></div>
-        </div>
-      </div>
-    </section>
+<section id="skills" class="section section-dark">
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="kicker">02 / TOOLBOX</p>
+      <h2>The stack I work with.</h2>
+    </div>
+    <div class="skill-grid">
+      <article class="skill-card reveal"><span class="skill-num">01</span><h3>Cloud</h3><p>Azure · AWS · ACR · EC2 · S3 · VPC · IAM · Load Balancing</p></article>
+      <article class="skill-card reveal"><span class="skill-num">02</span><h3>Kubernetes</h3><p>AKS · EKS · Deployments · Services · Ingress · Helm · RBAC · Autoscaling</p></article>
+      <article class="skill-card reveal"><span class="skill-num">03</span><h3>IaC & Automation</h3><p>Terraform · Ansible · Python · Bash · Linux · reusable infrastructure modules</p></article>
+      <article class="skill-card reveal"><span class="skill-num">04</span><h3>CI/CD</h3><p>Azure DevOps · Jenkins · GitHub Actions · Git · Docker · release strategies</p></article>
+      <article class="skill-card reveal"><span class="skill-num">05</span><h3>Observability</h3><p>Prometheus · Grafana · Loki · metrics · logs · alerting · dashboards</p></article>
+      <article class="skill-card reveal"><span class="skill-num">06</span><h3>Web & Middleware</h3><p>NGINX · Ingress · application gateways · MuleSoft · production troubleshooting</p></article>
+    </div>
+  </div>
+</section>
 
-    <section id="skills" class="section alt">
-      <div class="section-heading">
-        <p class="eyebrow">TECH STACK</p>
-        <h2>Tools I work with</h2>
-      </div>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3>☁️ Cloud</h3>
-          <div class="tags"><span>Azure</span><span>AWS</span><span>ACR</span><span>Azure Storage</span><span>Cosmos DB</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>☸️ Containers</h3>
-          <div class="tags"><span>Kubernetes</span><span>AKS</span><span>EKS</span><span>Docker</span><span>Helm</span><span>Ingress</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>🚀 CI/CD & IaC</h3>
-          <div class="tags"><span>Azure DevOps</span><span>Jenkins</span><span>GitHub Actions</span><span>Terraform</span><span>Git</span><span>Ansible</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>📊 Observability</h3>
-          <div class="tags"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Monitoring</span><span>Logging</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>🐧 Automation</h3>
-          <div class="tags"><span>Linux</span><span>Bash</span><span>Python</span><span>Shell Scripting</span><span>NGINX</span></div>
-        </div>
-      </div>
-    </section>
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="kicker">03 / SELECTED WORK</p>
+      <h2>Projects that show how I think.</h2>
+    </div>
+    <div class="project-list">
+      <article class="project reveal">
+        <div class="project-meta"><span>01</span><span>Cloud · Kubernetes · CI/CD</span></div>
+        <div><h3>Cloud-native delivery platform</h3><p>Designed a deployment flow from source control to container registry and Kubernetes, with environment separation, rollout/rollback procedures and operational checks.</p><div class="tags"><b>Azure DevOps</b><b>AKS</b><b>ACR</b><b>Docker</b><b>Helm</b></div></div>
+      </article>
+      <article class="project reveal">
+        <div class="project-meta"><span>02</span><span>Observability</span></div>
+        <div><h3>Prometheus + Grafana monitoring</h3><p>Built dashboards and monitoring workflows for infrastructure and Kubernetes workloads, with metrics and centralized logs through Grafana Loki.</p><div class="tags"><b>Prometheus</b><b>Grafana</b><b>Loki</b><b>Kubernetes</b></div></div>
+      </article>
+      <article class="project reveal">
+        <div class="project-meta"><span>03</span><span>Infrastructure as Code</span></div>
+        <div><h3>Terraform cloud infrastructure</h3><p>Automated repeatable infrastructure provisioning using Terraform, variables, outputs, dependencies and remote-state patterns suitable for team collaboration.</p><div class="tags"><b>Terraform</b><b>Azure</b><b>AWS</b><b>IaC</b></div></div>
+      </article>
+      <article class="project reveal">
+        <div class="project-meta"><span>04</span><span>Operations</span></div>
+        <div><h3>Production troubleshooting playbooks</h3><p>Structured approaches for CPU spikes, disk pressure, failed pods, connectivity issues, deployment failures and safe rollback during production incidents.</p><div class="tags"><b>Linux</b><b>Kubernetes</b><b>Cloud</b><b>Incident Response</b></div></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="experience" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">EXPERIENCE</p>
-        <h2>Career journey</h2>
+<section id="experience" class="section section-paper">
+  <div class="container two-col">
+    <div class="section-intro reveal">
+      <p class="kicker">04 / EXPERIENCE</p>
+      <h2>A practical, automation-first approach.</h2>
+    </div>
+    <div class="experience-copy reveal">
+      <div class="experience-item">
+        <span>DEVOPS ENGINEERING</span>
+        <h3>Cloud & Platform Engineering</h3>
+        <p>Designing and operating scalable Azure/AWS environments, Kubernetes platforms and infrastructure automation.</p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="date">Aug 2022 — Present</span>
-            <h3>Senior DevOps Engineer</h3>
-            <h4>Livlong • Mumbai</h4>
-            <ul>
-              <li>Work across Azure/AWS cloud infrastructure and DevOps automation.</li>
-              <li>Build and maintain CI/CD workflows and containerized application deployments.</li>
-              <li>Manage Kubernetes workloads, services, ingress, Helm deployments and production operations.</li>
-              <li>Use Terraform for Infrastructure as Code and Prometheus/Grafana/Loki for observability.</li>
-              <li>Automate operational activities using Python, Bash and Linux scripting.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="date">Aug 2021 — Jul 2022</span>
-            <h3>DevOps Engineer</h3>
-            <h4>Tata Consultancy Services • Bengaluru</h4>
-            <ul>
-              <li>Supported enterprise API and application environments.</li>
-              <li>Worked with Azure Storage, Cosmos DB, Azure Service Bus and MuleSoft.</li>
-              <li>Supported Java/Spring Boot applications and automation using Python and Shell.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="date">Dec 2018 — Jul 2021</span>
-            <h3>Software Engineer</h3>
-            <h4>nurtr • Gurgaon</h4>
-            <ul>
-              <li>Worked on MySQL and MongoDB database management and maintenance.</li>
-              <li>Supported web applications and WordPress development.</li>
-            </ul>
-          </div>
-        </article>
+      <div class="experience-item">
+        <span>DELIVERY</span>
+        <h3>CI/CD & Release Automation</h3>
+        <p>Building deployment pipelines, container workflows, environment promotion, testing and rollback strategies.</p>
       </div>
-    </section>
+      <div class="experience-item">
+        <span>RELIABILITY</span>
+        <h3>Monitoring & Production Support</h3>
+        <p>Using metrics, logs and dashboards to troubleshoot incidents and improve reliability and operational visibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="projects" class="section alt">
-      <div class="section-heading">
-        <p class="eyebrow">PROJECTS</p>
-        <h2>DevOps projects</h2>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <span class="project-icon">☸️</span>
-          <h3>AKS & Kubernetes Platform</h3>
-          <p>Containerized application deployment on AKS with ACR, Kubernetes services, ingress and Helm.</p>
-          <div class="tags"><span>AKS</span><span>Docker</span><span>Helm</span><span>ACR</span></div>
-        </article>
-        <article class="project-card">
-          <span class="project-icon">🏗️</span>
-          <h3>Terraform Infrastructure</h3>
-          <p>Infrastructure as Code approach for repeatable and consistent cloud provisioning and management.</p>
-          <div class="tags"><span>Terraform</span><span>Azure</span><span>AWS</span><span>IaC</span></div>
-        </article>
-        <article class="project-card">
-          <span class="project-icon">📈</span>
-          <h3>Monitoring & Observability</h3>
-          <p>Metrics, dashboards and centralized logs using Prometheus, Grafana and Grafana Loki.</p>
-          <div class="tags"><span>Prometheus</span><span>Grafana</span><span>Loki</span></div>
-        </article>
-        <article class="project-card">
-          <span class="project-icon">🚀</span>
-          <h3>CI/CD Automation</h3>
-          <p>Automated build and deployment workflows using modern CI/CD tooling for reliable releases.</p>
-          <div class="tags"><span>Azure DevOps</span><span>Jenkins</span><span>GitHub Actions</span></div>
-        </article>
-      </div>
-    </section>
+<section class="section blog-preview">
+  <div class="container">
+    <div class="section-heading split-heading reveal">
+      <div><p class="kicker">05 / WRITING</p><h2>DevOps notes & practical guides.</h2></div>
+      <a class="text-link" href="blogs/">View all blogs ↗</a>
+    </div>
+    <div class="blog-grid">
+      <a class="blog-card reveal" href="blogs/kubernetes-pod-scheduling/"><span>01 · KUBERNETES</span><h3>How Kubernetes schedules a Pod</h3><p>Requests, limits, taints, tolerations, affinity and the scheduler flow.</p><b>Read article →</b></a>
+      <a class="blog-card reveal" href="blogs/terraform-dependencies/"><span>02 · TERRAFORM</span><h3>Implicit vs explicit dependencies</h3><p>How Terraform builds its dependency graph and when to use depends_on.</p><b>Read article →</b></a>
+      <a class="blog-card reveal" href="blogs/aks-upgrade/"><span>03 · AZURE</span><h3>AKS upgrade: what happens?</h3><p>Control plane, node pools, pod disruption and safer upgrade planning.</p><b>Read article →</b></a>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="section contact">
-      <div class="section-heading">
-        <p class="eyebrow">CONTACT</p>
-        <h2>Let's connect</h2>
-        <p>Open to Senior DevOps, Cloud DevOps and Platform Engineering opportunities.</p>
-      </div>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/manish-kumar-singh-00299a157/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:your-email@example.com">Email</a>
-        <a href="#" onclick="return false;">Resume</a>
-      </div>
-      <p class="note">Replace the GitHub, email and resume links with your real links before publishing.</p>
-    </section>
-  </main>
+<section id="contact" class="contact-section">
+  <div class="container contact-inner reveal">
+    <p class="kicker">06 / CONTACT</p>
+    <h2>Let’s build something<br><em>reliable.</em></h2>
+    <p>For DevOps opportunities, technical discussions or collaboration, connect with me online.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-dark" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <p class="small-note">Replace the placeholder LinkedIn/GitHub links with your profiles before publishing.</p>
+  </div>
+</section>
+</main>
 
-  <footer>
-    <p>© <span id="year"></span> Manish Kumar Singh • manishdevops.in</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer><div class="container footer-wrap"><span>© <span id="year"></span> Manish Kumar Singh</span><span>manishdevops.in</span><a href="blogs/">Blogs ↗</a></div></footer>
+<script src="script.js"></script>
 </body>
 </html>

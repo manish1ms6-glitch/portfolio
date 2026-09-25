@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://manishdevops.in/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/kubernetes-pod-scheduling/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/terraform-dependencies/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/aks-upgrade/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/cicd-github-to-eks/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/docker-image-optimization/</loc></url>
+  <url><loc>https://manishdevops.in/blogs/production-cpu-spike/</loc></url>
+</urlset>
