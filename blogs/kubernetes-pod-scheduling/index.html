@@ -20,7 +20,7 @@
 <p>After filtering, the scheduler scores the remaining nodes using scheduling plugins and configured policies. The highest-scoring suitable node is selected.</p>
 <h2>4. Binding and startup</h2>
 <p>The scheduler records the decision by binding the Pod to the selected node. The kubelet on that node then pulls the image, creates the containers and reports their status back to the API server.</p>
-<div class="callout"><strong>Interview tip:</strong> A clean answer is: <em>“Scheduler watches unscheduled Pods, filters nodes that cannot satisfy constraints, scores the remaining nodes, selects one and binds the Pod. The kubelet then runs it.”</em></div>
+
 <h2>When a Pod stays Pending</h2>
 <ul><li>Check <code>kubectl describe pod &lt;pod&gt;</code> and read the Events section.</li><li>Check node capacity and Pod resource requests.</li><li>Review taints/tolerations and node selectors.</li><li>Check affinity/anti-affinity rules.</li><li>Check storage and topology constraints when volumes are involved.</li></ul>
 <div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
