@@ -31,7 +31,7 @@ resource "azurerm_storage_account" "app" {
 <p>The important point is that <code>depends_on</code> should not be used everywhere. Overusing it can make the graph more restrictive than necessary.</p>
 <h2>How Terraform uses the graph</h2>
 <p>Terraform builds a graph of resources and relationships, then walks that graph while respecting dependencies. Independent resources can be processed in parallel, while dependent resources wait for their prerequisites.</p>
-<div class="callout"><strong>Interview tip:</strong> Say: <em>“Implicit dependencies come from references in expressions. Explicit dependencies are declared with depends_on when Terraform cannot infer the real operational dependency.”</em></div>
+
 <div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
 <footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
 </body></html>
