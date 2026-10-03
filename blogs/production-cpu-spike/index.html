@@ -20,7 +20,7 @@ kubectl get pods -A -o wide</pre>
 <p>If the release is strongly correlated and the service is degraded, follow the incident process. A rollback may be appropriate when it is the safest way to restore service while the root cause is investigated.</p>
 <h2>Step 5: Investigate the root cause</h2>
 <p>Use application logs, metrics, traces where available and profiling tools appropriate to the runtime. The goal is to identify what code path or workload behavior is consuming CPU, not simply to increase the node size.</p>
-<div class="callout"><strong>Interview answer:</strong> “First I establish scope and correlate the spike with the release. Then I inspect Pod/node metrics, restarts, HPA, traffic and resource settings. If the release is causing impact, I use the approved rollback or mitigation path, then investigate logs and application behavior to find the root cause.”</div>
+
 <div class="next"><a href="../">← All blogs</a><a href="../../">Back to portfolio →</a></div></article></main>
 <footer><div class="container footer-wrap"><span>© 2026 Manish Kumar Singh</span><a href="../../">manishdevops.in ↗</a></div></footer>
 </body></html>
